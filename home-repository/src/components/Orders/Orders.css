@@ -1,0 +1,10 @@
+.ordersTable {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 480px) {
+    h3 {
+        margin-top: 0vh;
+    }
+}

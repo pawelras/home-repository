@@ -1,0 +1,26 @@
+.searchContainer {
+    
+    display: inline-flex; 
+    border: solid 1px grey;
+    min-width: 45%; 
+    border-radius: 5px; 
+    align-items: center;
+}
+
+#searchBar {
+
+    min-width: 95%; 
+    height: 1.5rem;
+    border: none;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 480px) {
+
+    .searchContainer {
+        min-width: 90%;
+    }
+
+    
+}
+    

@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-size: 1.3rem;
+}
+.link {
+    text-decoration: none;
+    color: inherit
+  }
+
+.account {
+    width: 15%;
+    margin-right: 3vh;
+    
+}
+
+@media screen and (max-width: 480px) {
+
+    .logo {
+        min-width: 80%;
+    }
+
+    .account {
+        width: 60%;
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-around;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    
+}
+    

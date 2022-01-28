@@ -1,0 +1,21 @@
+.cartTable {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cartThumbnail {
+    width: 100px;
+}
+
+@media screen and (max-width: 480px) {
+    .cartThumbnail {
+        display: none;
+    }
+
+    .cartTable th{
+        padding: 3px;
+    }
+    .cartTable td {
+        padding: 3px;
+    }
+}

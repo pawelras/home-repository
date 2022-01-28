@@ -1,0 +1,68 @@
+.itemContainer {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 5vh;
+}
+
+.goBack {
+    position: absolute;
+    left: 20%;
+    top: 25%;
+    cursor: pointer;
+    font-weight: bold;
+    
+}
+
+.magnifier {
+    margin-top: 3vh;
+    flex: 0 0 50%;
+    max-width: 100%;
+    min-width: 400;
+}
+
+.descriptionContainer {
+    align-self: center;
+}
+
+.descriptionContainer p {
+    padding-left: 4vh;
+    padding-right: 4vh;
+    text-align: justify;
+}
+
+.price {
+    padding-left: 4vh; 
+    padding-right: 4vh; 
+    text-align: left;
+    font-size: 1.5em; 
+}
+
+.inStock {
+    padding-left: 4vh;
+    padding-right: 4vh;
+    text-align: left; 
+    font-size: 0.8em; 
+}
+
+@media screen and (max-width: 480px) {
+
+    .descriptionContainer {
+        width: 90%;
+    }
+
+    .itemContainer {
+        margin-top: 4vh;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    h3 {
+        margin-top: 8vh;
+    }
+
+    .goBack {
+        left: 10%;
+       
+    }
+}

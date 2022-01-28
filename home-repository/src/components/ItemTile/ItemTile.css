@@ -1,0 +1,20 @@
+.itemTileContainer {
+    min-width: 25%;
+    margin-bottom: 4vh;
+}
+
+.itemTileContainer h3 {
+    font-size: 3rem;
+    font-weight: ;
+}
+
+.itemTileContainer img
+{
+    width: 300px;
+    height: 300px;
+    max-width: 100%
+}
+
+.tilePrice {
+    font-weight: 500;
+}

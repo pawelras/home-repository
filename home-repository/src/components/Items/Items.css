@@ -1,0 +1,16 @@
+.itemsTiles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    margin-left: 10%; 
+    margin-right: 10%;
+}
+
+
+@media screen and (max-width: 480px)  {
+
+    .itemsTiles {
+        margin-top: 4vh;
+        margin-left: 8vh;
+    }
+}
