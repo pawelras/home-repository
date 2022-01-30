@@ -1,16 +1,14 @@
-import React, { useEffect } from "react";
+import  { React, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCartTotal } from "../Cart/CartSlice";
 import { useNavigate } from 'react-router-dom';
-import { fetchCartItems } from "../Cart/CartSlice";
+import { fetchCartTotal, fetchCartItems } from "../Cart/CartSlice";
+
 
 export const Checkout = () => {
 
     const cartItems = useSelector(state => state.cart.cartItems);
-    const items = useSelector(state => state.items.items);
-    const user = useSelector(state=> state.dashboard.user);
     const total = useSelector(state => state.cart.cartTotal);
-    console.log(cartItems);
+    
 
     const date = new Date().toISOString().substring(0,10);
     

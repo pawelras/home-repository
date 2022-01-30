@@ -1,15 +1,12 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import { React, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from "react";
 import { fetchItems } from "../Items/ItemsSlice";
 import { ToastContainer, toast, Zoom, Bounce } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-import './Item.css';
 import ReactImageMagnify from 'react-image-magnify';
 import { fetchCartItems } from "../Cart/CartSlice";
-import { useNavigate } from 'react-router-dom';
-
+import './Item.css';
 
 
 const loginUrl = "/users/login"
@@ -25,23 +22,23 @@ export const Item = () => {
             hideProgressBar: true,
         }
         );
-    }
+    };
 
     const loginMessage = () => {
         toast.warn('Please Log in', {
             autoclose: 3000,
             position: "top-center",
             hideProgressBar: true,
-        }
+            }
         );
-    }
+    };
    
     useEffect(() => {
-        dispatch(fetchItems())
-    }, [dispatch])
+        dispatch(fetchItems());
+    }, [dispatch]);
 
 
-    const {itemId} = useParams()
+    const {itemId} = useParams();
 
     const intId = Number(itemId);
     const items = useSelector(state => state.items.items);
@@ -49,7 +46,7 @@ export const Item = () => {
     
 
     const item = items.find(e => e.id === intId);
-    console.log(item);
+    
     
     const src = `${process.env.PUBLIC_URL}/images/${itemId}.jpg`;
 
@@ -126,4 +123,4 @@ export const Item = () => {
             <ToastContainer autoClose={2000} />
         </div>
     )
-}
+};

@@ -9,7 +9,7 @@ export const fetchUser = createAsyncThunk(
         const json = await data.json();
         return json;
     }
-)
+);
 
 export const dashboardSlice = createSlice({
     name: "dashboard",
@@ -44,7 +44,7 @@ export const dashboardSlice = createSlice({
         },
     }
 
-})
+});
 
 export default dashboardSlice.reducer;
 export const {clearUser} = dashboardSlice.actions;

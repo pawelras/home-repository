@@ -13,7 +13,7 @@ const fetchCartItems = (req, res) => {
         console.log('fetchCartItems Not Authenticated')
         res.render('login.ejs');
     }
-}
+};
 
 const fetchCartTotal = (req, res) => {
     if (req.isAuthenticated()) {
@@ -26,7 +26,7 @@ const fetchCartTotal = (req, res) => {
         console.log('fetchCartTotal Not Authenticated')
         res.render('login.ejs');
     }
-}
+};
 
 
 
@@ -35,8 +35,6 @@ const addItemToCart = (req, res, next) => {
     if (req.isAuthenticated()) {
 
         const userId = req.user.id;
-        
-        console.log(userId);
         const itemId = req.params.id;
         
         pool.query('SELECT * FROM cart_items WHERE user_id = $1 AND item_id = $2', [userId, itemId], (error, results) => {
@@ -64,7 +62,7 @@ const addItemToCart = (req, res, next) => {
                 })
             }
 
-        })
+        });
         
         
 
@@ -79,12 +77,9 @@ const removeItemsFromCart = (req, res) => {
 
     if (req.isAuthenticated()) {
 
-        console.log('here');
         const userId = req.user.id;
         const itemId = req.params.id;
-        console.log(userId);
-        console.log(itemId);
-
+       
         pool.query('DELETE FROM cart_items WHERE user_id = $1 AND item_id = $2', [userId, itemId], (error, results) => {
             if (error) { 
                 throw error
@@ -114,7 +109,7 @@ const emptyCart = async (req, res) => {
         console.log('empty cart not authenticated')
         res.redirect('/users/login')
     }
-}
+};
 
 module.exports = {  fetchCartItems, 
                     addItemToCart,

@@ -1,12 +1,10 @@
-import React from "react";
+import { useEffect, React } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
 import { fetchCategories } from "../Items/ItemsSlice";
-import './Categories.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { catToIcon } from "./util";
-import { setCategory } from "../Items/ItemsSlice";
-import { fetchItemsByCategory } from "../Items/ItemsSlice";
+import { setCategory, fetchItemsByCategory } from "../Items/ItemsSlice";
+import './Categories.css';
 
 export const Categories = () => {
 
@@ -15,7 +13,7 @@ export const Categories = () => {
 
     useEffect(()=> {
         
-        dispatch(fetchCategories())
+        dispatch(fetchCategories());
 
     }, [dispatch])
 
@@ -49,4 +47,4 @@ export const Categories = () => {
             </ul>
         </div>
     )
-}
+};

@@ -1,7 +1,6 @@
-import { Header } from '../components/Header/Header';
-import { Categories } from '../components/Categories/Categories';
-import { Items } from '../components/Items/Items';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { Header } from '../components/Header/Header';
+import { Items } from '../components/Items/Items';
 import { Dashboard } from '../components/Dashboard/Dashboard';
 import { Item } from '../components/Item/Item';
 import { Cart } from '../components/Cart/Cart';
@@ -31,6 +30,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;

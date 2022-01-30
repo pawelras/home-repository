@@ -10,4 +10,4 @@ export const catToIcon = {
     Textiles: faLayerGroup,
     "Home Decor": faObjectGroup,
     Lighting: faLightbulb
-}
+};

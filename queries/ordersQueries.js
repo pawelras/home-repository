@@ -51,4 +51,5 @@ const fetchOrders = async (req, res) => {
  
 
 module.exports = { orderItems,
-                    fetchOrders }
+                    fetchOrders };
+                    

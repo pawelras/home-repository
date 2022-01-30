@@ -1,27 +1,25 @@
-import React from "react";
-import { useEffect } from "react";
+import { React, useEffect } from "react";
 import { useSelector, useDispatch} from "react-redux";
+import { useNavigate } from 'react-router-dom';
 import { fetchCartItems, clearCart, fetchCartTotal } from "./CartSlice";
 import { fetchUser } from "../Dashboard/DashboardSlice";
 import { fetchItems } from "../Items/ItemsSlice";
 import { ToastContainer, toast} from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import "./Cart.css";
-import { useNavigate } from 'react-router-dom';
+
 
 
 export const Cart = () => {
 
-   
-
     const cartItems = useSelector(state => state.cart.cartItems);
     const cartTotal = useSelector(state => state.cart.cartTotal)
     const user = useSelector(state=> state.dashboard.user);
-    
     const imageSrc = `images/`;
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
 
     useEffect(() => {
         dispatch(fetchUser())
@@ -33,11 +31,10 @@ export const Cart = () => {
 
     useEffect(() => {
         dispatch(fetchCartTotal())
-    }, [dispatch])
+    }, [dispatch]);
 
     
-
-
+    
     const emptyCart = () => {
 
         dispatch(clearCart())
@@ -60,7 +57,7 @@ export const Cart = () => {
 
     const handleCheckOut = () => {
         if (!user.address) {
-            toast.configure()
+            toast.configure();
             toast.warn('Please provide delivery address in Account section.', {
                 autoclose: 5000,
                 position: "top-center",
@@ -68,7 +65,7 @@ export const Cart = () => {
             }
             );
         } else {
-            // window.location = "/cart/checkout";
+            
             navigate('/cart/checkout', {replace: true})
         }
     }

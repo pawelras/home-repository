@@ -1,11 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { fetchCartItems } from "../Cart/CartSlice";
 import './ItemTile.css';
-import { useNavigate } from 'react-router-dom';
 
 export const ItemTile = (props) => {
 
@@ -28,15 +27,12 @@ export const ItemTile = (props) => {
             position: "top-center",
             hideProgressBar: true,
         }
-        );
-    }
+    )};
 
     
-    const loginUrl = "/users/login"
+    const loginUrl = "/users/login";
     const linkToItem = `/items/${props.item.id}`;
     const imageSource = `images/${props.item.id}.jpg`;
-    
-
     
 
     const addToCart = ({target}) => {
@@ -70,9 +66,8 @@ export const ItemTile = (props) => {
             }            
 
         })
-        .catch(error => console.log(error));}
-    
-    }
+        .catch(error => console.log(error));
+    }};
    
     
     return (
@@ -87,4 +82,4 @@ export const ItemTile = (props) => {
             <ToastContainer autoClose={2000} />
         </div>
     )
-}
+};

@@ -80,7 +80,7 @@ export const fetchCartTotal = createAsyncThunk(
         }
      }
 
- })
+ });
 
  export default cartSlice.reducer;
  export const { clearCart } = cartSlice.actions;

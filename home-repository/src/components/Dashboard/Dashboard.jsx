@@ -1,10 +1,10 @@
-import { React, useEffect, useState } from "react";
-import { useDispatch,useSelector, useStore } from "react-redux";
+import { React, useState } from "react";
+import { useSelector } from "react-redux";
+import { Orders } from "../Orders/Orders";
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast, Zoom, Bounce } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import './Dashboard.css';
-import { Orders } from "../Orders/Orders";
-import { useNavigate } from 'react-router-dom';
 
 
 
@@ -17,10 +17,10 @@ export const Dashboard = () => {
     const [userDetails, setUserDetails] = useState(user); 
 
     const handleDelete = () => {
-        console.log('deleting')
+        console.log('deleting');
         fetch("/users/deleteAccount", { method: 'DELETE', credentials: 'include'})
         .then(response => { if (response.ok) {
-            // window.location.href = '/'
+        
             navigate('/', {replace: true});
         }})
         .catch(error => console.log(error))
@@ -131,4 +131,4 @@ export const Dashboard = () => {
             <ToastContainer autoClose={2000} />
         </div>
     )
-}
+};

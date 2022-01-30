@@ -15,7 +15,7 @@ export  const SearchBar = () => {
     const handleChange = (e) => {
         e.preventDefault()
         dispatch(setSearchTerm(e.target.value))
-     }
+     };
     
     return (
         <div className="searchContainer">
@@ -32,4 +32,4 @@ export  const SearchBar = () => {
 
         </div>
     )
-}
+};

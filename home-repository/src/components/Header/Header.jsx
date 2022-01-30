@@ -1,12 +1,12 @@
-import {React, useEffect, useState } from "react";
+import {React, useEffect } from "react";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUser } from "../Dashboard/DashboardSlice";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faUserCircle, faSignInAlt } from "@fortawesome/free-solid-svg-icons";
-import './Header.css';
 import { fetchCartItems } from "../Cart/CartSlice";
+import './Header.css';
 
 
 export const Header = () => {
@@ -14,15 +14,15 @@ export const Header = () => {
     const location = useLocation();
     const showSearch = location.pathname === "/" ? true : false;
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     useEffect(()=> {
-        dispatch(fetchUser())
+        dispatch(fetchUser());
   
     }, [dispatch]);
 
     useEffect(()=> {
-        dispatch(fetchCartItems())
+        dispatch(fetchCartItems());
   
     }, [dispatch])
 
@@ -44,4 +44,4 @@ export const Header = () => {
             </div>
          </div>
     )
-}
+};

@@ -13,6 +13,7 @@ const getAllItems = (req, res) => {
     });
 };
 
+
 const getCategories = (req, res) => {
     pool.query('SELECT * FROM categories', (error, results) => {
         if (error) {throw error};
@@ -20,6 +21,7 @@ const getCategories = (req, res) => {
         res.status(200).json(results.rows)
     });
 };
+
 
 const getItemById = (req, res) => {
     const id = req.params.id;
@@ -32,6 +34,7 @@ const getItemById = (req, res) => {
     });
 };
 
+
 const getItemsByCategory = (req, res) => {
     const id = req.params.categoryId;
     pool.query('SELECT * FROM items WHERE category_id = $1', [id], (error, results) => {
@@ -41,6 +44,7 @@ const getItemsByCategory = (req, res) => {
         res.status(200).json(results.rows);
     });
 };
+
 
 const getItemsBySearchTerm = (req, res) => {
     const searchTerm = `%${req.params.searchTerm}%`;
@@ -53,13 +57,10 @@ const getItemsBySearchTerm = (req, res) => {
 };
 
 
-
-
 const addItemToCart = (req, res, next) => {
     if (req.isAuthenticated()) {
 
         const userId = req.user.id;
-        console.log(userId);
         const itemId = req.params.id;
         
         pool.query('SELECT * FROM cart_items WHERE user_id = $1 AND item_id = $2', [userId, itemId], (error, results) => {
@@ -94,7 +95,7 @@ const addItemToCart = (req, res, next) => {
     }  else { //if not authencticated
         res.status(401).send();
     }
-} //function end
+}; //function end
 
 module.exports = {  getAllItems,
                     getItemById,

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchItems } from "./ItemsSlice";
 import { Categories } from "../Categories/Categories";
 import './Items.css';
-import { fetchCartItems } from "../Cart/CartSlice";
+
 
 
 export const Items = () => {
@@ -38,4 +38,4 @@ export const Items = () => {
             </div>
         </div>
     )
-}
+};
