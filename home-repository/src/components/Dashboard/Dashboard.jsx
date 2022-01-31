@@ -21,7 +21,7 @@ export const Dashboard = () => {
         fetch("/users/deleteAccount", { method: 'DELETE', credentials: 'include'})
         .then(response => { if (response.ok) {
         
-            navigate('/', {replace: true});
+            window.location.href = '/';
         }})
         .catch(error => console.log(error))
     }
